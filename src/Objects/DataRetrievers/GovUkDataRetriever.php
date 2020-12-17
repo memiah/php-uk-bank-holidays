@@ -23,11 +23,7 @@ class GovUkDataRetriever implements DataRetrieverInterface
 
     private function setupCache()
     {
-        if (class_exists('Illuminate\Support\Facades\Cache')) {
-            $this->setCacheDriver(new LaravelCacheDriver());
-        } else {
-            $this->setCacheDriver(new DOFileCacheDriver());
-        }
+        $this->setCacheDriver(new DOFileCacheDriver());
     }
 
     public function setCacheDriver(CacheDriverInterface $cache)
